@@ -81,4 +81,8 @@ jobs:
           mkdir -p ~/.ssh
           echo "$SSH_PRIVATE_KEY" > ~/.ssh/id_rsa
           chmod 600 ~/.ssh/id_rsa
-          ssh -o StrictHostKeyChecking=no user@your-server "cd /var/www/html/app && git pull origin main && npm install && npm start"
+          ssh -o StrictHostKeyChecking=no root@192.168.10.22 "cd /var/www/html/app && git pull origin main && npm install && npm start"
+
+      - name: Deploy to Server
+        run: |
+          ssh user@your-server-ip "cd /var/www/html/app && git pull origin main && npm install && npm start"
