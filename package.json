@@ -1,0 +1,32 @@
+{
+  "name": "devsecops-app",
+  "version": "1.0.0",
+  "description": "DevSecOps CI/CD pipeline with GitHub Actions",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "start": "node server.js",
+    "test": "jest",
+    "lint": "eslint .",
+    "security-scan": "npx retire --path ."
+  },
+  "dependencies": {
+    "express": "^4.18.2"
+  },
+  "devDependencies": {
+    "jest": "^29.6.0",
+    "supertest": "^6.3.3",
+    "eslint": "^8.24.0",
+    "eslint-config-standard": "^17.0.0",
+    "eslint-plugin-import": "^2.28.0",
+    "eslint-plugin-n": "^15.0.0",
+    "eslint-plugin-promise": "^6.0.1"
+  },
+  "directories": {
+    "src": "src",
+    "tests": "tests"
+  },
+  "githubActions": {
+    "workflow": ".github/workflows/devsecops-pipeline.yml"
+  }
+}
